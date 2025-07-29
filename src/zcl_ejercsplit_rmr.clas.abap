@@ -30,41 +30,46 @@ CLASS zcl_ejercsplit_rmr IMPLEMENTATION.
 SPLIT lv_string AT ' ' INTO TABLE lt_nombres.
 
 *" Recorrer la tabla de nombres y asignar cada nombre a una variable individual
-*LOOP AT lt_nombres INTO ls_nombre.
-*  IF sy-index = 1.
-*    lv_nombre1 = ls_nombre.
-*  ELSEIF sy-index = 2.
-*    lv_nombre2 = ls_nombre.
-*  ELSEIF sy-index = 3.
-*    lv_nombre3 = ls_nombre.
-*  ELSEIF sy-index = 4.
-*    lv_nombre4 = ls_nombre.
-*  ELSEIF sy-index = 5.
-*    lv_nombre5 = ls_nombre.
-*  ENDIF.
-*ENDLOOP.
+LOOP AT lt_nombres INTO ls_nombre.
+  IF sy-index = 1.
+    lv_nombre1 = ls_nombre.
+    out->write( | Hola {  lv_nombre1 } | ).
+  ELSEIF sy-index = 2.
+    lv_nombre2 = ls_nombre.
+    out->write( | Hola { lv_nombre2 }  | ).
+  ELSEIF sy-index = 3.
+    lv_nombre3 = ls_nombre.
+    out->write(  | Hola { lv_nombre3 }  | ).
+  ELSEIF sy-index = 4.
+    lv_nombre4 = ls_nombre.
+    out->write(  | Hola { lv_nombre4 }  | ).
+  ELSEIF sy-index = 5.
+    lv_nombre5 = ls_nombre.
+    out->write(  | Hola { lv_nombre5 }  | ).
+  ENDIF.
+ENDLOOP.
 
-IF lines( lt_nombres ) >= 1.
-  lv_nombre1 = lt_nombres[ 1 ].
-ENDIF.
-IF lines( lt_nombres ) >= 2.
-  lv_nombre2 = lt_nombres[ 2 ].
-ENDIF.
-IF lines( lt_nombres ) >= 3.
-  lv_nombre3 = lt_nombres[ 3 ].
-ENDIF.
-IF lines( lt_nombres ) >= 4.
-  lv_nombre4 = lt_nombres[ 4 ].
-ENDIF.
-IF lines( lt_nombres ) >= 5.
-  lv_nombre5 = lt_nombres[ 5 ].
-ENDIF.
-
-out->write( lv_nombre1 ).
-out->write(  lv_nombre2 ).
-out->write(  lv_nombre3 ).
-out->write(  lv_nombre4 ).
-out->write(  lv_nombre5 ).
+*IF lines( lt_nombres ) >= 1.
+*  lv_nombre1 = lt_nombres[ 1 ].
+*ENDIF.
+*IF lines( lt_nombres ) >= 2.
+*  lv_nombre2 = lt_nombres[ 2 ].
+*ENDIF.
+*IF lines( lt_nombres ) >= 3.
+*  lv_nombre3 = lt_nombres[ 3 ].
+*ENDIF.
+*IF lines( lt_nombres ) >= 4.
+*  lv_nombre4 = lt_nombres[ 4 ].
+*ENDIF.
+*IF lines( lt_nombres ) >= 5.
+*  lv_nombre5 = lt_nombres[ 5 ].
+*ENDIF.
+*
+*out->write( lv_nombre1 ).
+*out->write(  lv_nombre2 ).
+*out->write(  lv_nombre3 ).
+*out->write(  lv_nombre4 ).
+*out->write(  lv_nombre5 ).
 
   ENDMETHOD.
 ENDCLASS.
