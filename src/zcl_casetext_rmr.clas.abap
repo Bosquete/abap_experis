@@ -31,16 +31,16 @@ CLASS zcl_casetext_rmr IMPLEMENTATION.
 
      if lv_aleatorio = 1.
             lv_nombre = lv_nombre1.
-           " out->write( lv_aleatorio && | | && lv_nombre ).
+            out->write( lv_aleatorio && | | && lv_nombre ).
      elseif lv_aleatorio = 2.
             lv_nombre = lv_nombre2.
-           " out->write( lv_aleatorio && | | &&  lv_nombre ).
+            out->write( lv_aleatorio && | | &&  lv_nombre ).
      elseif lv_aleatorio = 3.
             lv_nombre = lv_nombre3.
-           " out->write( lv_aleatorio && | | &&  lv_nombre ).
+            out->write( lv_aleatorio && | | &&  lv_nombre ).
       else.
             lv_nombre = lv_nombre4.
-           " out->write( lv_aleatorio && | | &&  lv_nombre ).
+            out->write( lv_aleatorio && | | &&  lv_nombre ).
       endif.
 
        CASE lv_aleatorio.
@@ -54,7 +54,7 @@ CLASS zcl_casetext_rmr IMPLEMENTATION.
        WHEN 2.
 
              OUT->WRITE( lv_nombre ).
-            out->write( 'El número aleatorio que ha salido es ' && | | && lv_aleatorio ).
+            out->write( | El número aleatorio que ha salido es { lv_aleatorio } | ).
 
        WHEN 3.
 

@@ -17,13 +17,15 @@ CLASS zcl_calculadoracase_rmr IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+    " Cargamos variables random dos variables para cómputo y otra para 4 operaciones
+    DATA(lv_var) = cl_abap_random_int=>create(  seed = cl_abap_random=>seed( )
+    min = 1
+    max = 9 )->get_next( ).
 
-   DATA(lv_var) = cl_abap_random_int=>create(  seed = cl_abap_random=>seed(  )
+    Data(lv_var1) = cl_abap_random_int=>create(  seed = cl_abap_random=>seed( )
     min = 1
-    max = 9 )->get_next(  ).
-    DATA(lv_var1) = cl_abap_random_int=>create(  seed = cl_abap_random=>seed(  )
-    min = 1
-    max = 9 )->get_next(  ).
+    max = 9 )->get_next( ).
+
     DATA(lv_opera) = cl_abap_random_int=>create(  seed = cl_abap_random=>seed(  )
     min = 1
     max = 4 )->get_next(  ).
@@ -56,23 +58,23 @@ CLASS zcl_calculadoracase_rmr IMPLEMENTATION.
        WHEN 1.
 
             lv_resultado = lv_var + lv_var1 .
-            out->write( |'El resultado de { lv_var } { lv_opera } {  lv_var1 } es:{ lv_resultado  } | ).
+            out->write( |El resultado de { lv_var } + {  lv_var1 } es: { lv_resultado  } | ).
 
        WHEN 2.
 
             lv_resultado = lv_var - lv_var1 .
-            out->write( |'El resultado de { lv_var } { lv_opera } {  lv_var1 } es:{ lv_resultado  } | ).
+            out->write( |El resultado de { lv_var } { lv_opera } {  lv_var1 } es: { lv_resultado  } | ).
 
        WHEN 3.
 
             lv_resultado = lv_var / lv_var1 .
-            out->write( |'El resultado de { lv_var } { lv_opera } {  lv_var1 } es:{ lv_resultado  } | ).
+            out->write( |El resultado de { lv_var } / {  lv_var1 } es: { lv_resultado  } | ).
 
 
        WHEN OTHERS.
 
             lv_resultado = lv_var * lv_var1 .
-            out->write( |'El resultado de { lv_var } { lv_opera } {  lv_var1 } es:{ lv_resultado  } | ).
+            out->write( |El resultado de { lv_var } * {  lv_var1 } es: { lv_resultado  } | ).
 
 
     ENDCASE.

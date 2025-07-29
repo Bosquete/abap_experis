@@ -20,7 +20,7 @@ CLASS zcl_do_endo_rmr IMPLEMENTATION.
 *  DATA(LV_NUM) = 0.
 *  DATA lv_cont type i value 2.
 
-  "Do 3 times.
+    "Do 3 times.
 *  DO .
 *
 **        out->write(  lv_num  ).
@@ -40,21 +40,21 @@ CLASS zcl_do_endo_rmr IMPLEMENTATION.
 *        endif.
 
 
-       " do 20 times.
+    " do 20 times.
 
-            "data(lv_div) = sy-index MOD 2.  " sy-index variable del propio sap que te dice el recorrido del  do. mod calcula el resto de una división
+    "data(lv_div) = sy-index MOD 2.  " sy-index variable del propio sap que te dice el recorrido del  do. mod calcula el resto de una división
 
-    do 20 times.
+    DO 4 TIMES.
 
-    data(lv_div) = sy-index mod 2.
-    out->write( lv_div ).
-    out->write(  'hola' ).
-            check lv_div = 0.
-           " out->write(  sy-index ).
-           out->write(  'hola check' ).
+      DATA(lv_div) = sy-index MOD 2.
+      "out->write( lv_div ).
+      "out->write(  'hola' ).
+      "CHECK lv_div = 0.
+      " out->write(  sy-index ).
+      out->write(  'hola check' ).
 
 
-  ENDDO.
+    ENDDO.
 
 
   ENDMETHOD.
