@@ -409,7 +409,53 @@ CLASS zcl_fun_cadenas_carcateres_rmr IMPLEMENTATION.
 *endif.
 
 *
-" Declaramos la cadena original con los nombres separados por espacios
+    " Declaramos la cadena original con los nombres separados por espacios
+*    DATA(lv_string) = 'daniel Fernando Pedro ramon Sergio'.
+*
+*    " Quitamos espacios duplicados y espacios al principio/final si los hubiera
+*    CONDENSE lv_string.
+*
+*    " Declaramos variables para almacenar cada nombre individualmente
+*    DATA: lv_nombre1 TYPE string,
+*          lv_nombre2 TYPE string,
+*          lv_nombre3 TYPE string,
+*          lv_nombre4 TYPE string,
+*          lv_nombre5 TYPE string.
+*
+*    " Buscamos la posición del primer espacio
+*    DATA(lv_pos1) = find( val = lv_string sub = | | ).
+*
+*    " Extraemos el primer nombre desde la posición 0 hasta antes del primer espacio
+*    lv_nombre1 = substring( val = lv_string off = 0 len = lv_pos1 ).
+*
+*    " Obtenemos el resto de la cadena después del primer espacio
+*    DATA(lv_rest1) = substring_after( val = lv_string sub = | | ).
+*
+*    " Buscamos el siguiente espacio en la nueva subcadena
+*    DATA(lv_pos2) = find( val = lv_rest1 sub = | | ).
+*
+*    " Extraemos el segundo nombre
+*    lv_nombre2 = substring( val = lv_rest1 off = 0 len = lv_pos2 ).
+*
+*    " Repetimos el proceso para extraer el tercer nombre
+*    DATA(lv_rest2) = substring_after( val = lv_rest1 sub = | | ).
+*    DATA(lv_pos3) = find( val = lv_rest2 sub = | | ).
+*    lv_nombre3 = substring( val = lv_rest2 off = 0 len = lv_pos3 ).
+*
+*    " Repetimos el proceso para extraer el cuarto nombre
+*    DATA(lv_rest3) = substring_after( val = lv_rest2 sub = | | ).
+*    DATA(lv_pos4) = find( val = lv_rest3 sub = | | ).
+*    lv_nombre4 = substring( val = lv_rest3 off = 0 len = lv_pos4 ).
+*
+*    " El quinto nombre es lo que queda después del último espacio
+*    lv_nombre5 = substring_after( val = lv_rest3 sub = | | ).
+
+
+    """""""""""""" SEGUNDA PARTE DEL EJERCICIO """"""""""""""""
+
+*
+*
+*   " Declaramos la cadena original con los nombres separados por espacios
 *    DATA(lv_string) = 'daniel Fernando Pedro ramon Sergio'.
 *
 *    " Quitamos espacios duplicados y espacios al principio/final si los hubiera
@@ -454,80 +500,100 @@ CLASS zcl_fun_cadenas_carcateres_rmr IMPLEMENTATION.
     """""""""""""" SEGUNDA PARTE DEL EJERCICIO """"""""""""""""
 
 
-
-   " Declaramos la cadena original con los nombres separados por espacios
-    DATA(lv_string) = 'daniel Fernando Pedro ramon Sergio'.
-
-    " Quitamos espacios duplicados y espacios al principio/final si los hubiera
-    CONDENSE lv_string.
-
-    " Declaramos variables para almacenar cada nombre individualmente
-    DATA: lv_nombre1 TYPE string,
-          lv_nombre2 TYPE string,
-          lv_nombre3 TYPE string,
-          lv_nombre4 TYPE string,
-          lv_nombre5 TYPE string.
-
-    " Buscamos la posición del primer espacio
-    DATA(lv_pos1) = find( val = lv_string sub = | | ).
-
-    " Extraemos el primer nombre desde la posición 0 hasta antes del primer espacio
-    lv_nombre1 = substring( val = lv_string off = 0 len = lv_pos1 ).
-
-    " Obtenemos el resto de la cadena después del primer espacio
-    DATA(lv_rest1) = substring_after( val = lv_string sub = | | ).
-
-    " Buscamos el siguiente espacio en la nueva subcadena
-    DATA(lv_pos2) = find( val = lv_rest1 sub = | | ).
-
-    " Extraemos el segundo nombre
-    lv_nombre2 = substring( val = lv_rest1 off = 0 len = lv_pos2 ).
-
-    " Repetimos el proceso para extraer el tercer nombre
-    DATA(lv_rest2) = substring_after( val = lv_rest1 sub = | | ).
-    DATA(lv_pos3) = find( val = lv_rest2 sub = | | ).
-    lv_nombre3 = substring( val = lv_rest2 off = 0 len = lv_pos3 ).
-
-    " Repetimos el proceso para extraer el cuarto nombre
-    DATA(lv_rest3) = substring_after( val = lv_rest2 sub = | | ).
-    DATA(lv_pos4) = find( val = lv_rest3 sub = | | ).
-    lv_nombre4 = substring( val = lv_rest3 off = 0 len = lv_pos4 ).
-
-    " El quinto nombre es lo que queda después del último espacio
-    lv_nombre5 = substring_after( val = lv_rest3 sub = | | ).
+*
+**    " Seleccionamos un nombre a evaluar (en este caso, el primero: daniel)
+*    DATA(lv_nombre) = lv_nombre5.
+*
+**    " Obtenemos su longitud
+*    DATA(lv_longitud) = strlen( lv_nombre ).
+*
+*    " Evaluamos según la longitud del nombre
+*    IF LV_LONGITUD >= 7.
+*      " Si tiene más de 7 caracteres, asumimos que es Fernando
+*        out->write( 'Hola Fernando' ).
+*
+*        ELSEIF lv_longitud = 6 and lv_nombre EQ 'daniel'.
+*             out->write( 'Hola Daniel' ).
+*      " Si tiene 6 caracteres puede ser Sergio o Daniel
+*            ELSEIF lv_longitud = 6 and lv_nombre EQ 'Sergio'.
+*                 out->write( 'Hola Sergio' ).
+*                ELSEIF lv_longitud <> 6 and lv_nombre EQ 'Pedro'.
+*                    out->write(  to_upper(  'Hola Pedro' ) ).
+*                    ELSE. " lv_nombre <> 6 and lv_nombre = 'ramon'.
+*                        out->write(  to_upper(  'Hola Ramón' ) ).
+*
+*        ENDIF.
 
 
-    """""""""""""" SEGUNDA PARTE DEL EJERCICIO """"""""""""""""
+**********************************************************************
+    "SEGMENT ES COMO EL SPLIT PERO PARA UN VALOR EN UN APOSICIÓN DETERMINADA.
+
+*        DATA(lv_string1) = 'El perro corre por el prado'.
+*
+*        split lv_string1 at | | into data(lv_palabra1) data(lv_palabra2) data(lv_palabra3) data(lv_palabra4)
+*        data(lv_palabra5) data(lv_palabra6).
+*        out->write(  lv_palabra3 ).
+*
+*        out->write(  | | ).
+*
+*        DATA(lv_palabra) = segment( val = lv_string1 index = 3 sep = | | ).
+*        out->write(  lv_palabra ).
+
+**********************************************************************
+    "    INSERT
+
+*    DATA: lv_var1 TYPE string VALUE '123cliente01',
+*          lv_var2 TYPE string VALUE ` HOLA `.
+*    DATA(lv_ins_string2) = insert( val = lv_var1 sub = lv_var2 off = 12 ).
+*    out->write( lv_ins_string2 ).
+*
+*    DATA(lv_ins_string) = insert( val = '123cliente01' sub = 'HOLA' off = 3 ). " off dice la posición,  sub es lo que pondrá
+*    out->write( lv_ins_string ).
+*
+*    DATA lv_ins_string3 TYPE string.
+*    lv_ins_string3 = insert( val = '123cliente01' sub = 'HOLA' off = 3 ).
+*    out->write( lv_ins_string3 ).
+*    out->write( insert( val = '123cliente01' sub = 'HOLA' off = 3  ) ).
 
 
+**********************************************************************
+    " OVERLAY ES COMO EL INSERT PERO SUSUTITUYE CADENAS DE CARCATERES.
 
-*    " Seleccionamos un nombre a evaluar (en este caso, el primero: daniel)
-    DATA(lv_nombre) = lv_nombre5.
+*       DATA: lv_var1 TYPE string VALUE '123cliente01',
+*          lv_var2 TYPE string VALUE ` HOLA `,
+*          lv_var3 TYPE string.
+*
+*
+*         overlay lv_var1 with lv_var2 only '123cl'.
+*          out->write( lv_var1 ).
 
-*    " Obtenemos su longitud
-    DATA(lv_longitud) = strlen( lv_nombre ).
+**********************************************************************
+" FIND ALL OCCURRENCES OF
 
-    " Evaluamos según la longitud del nombre
-    IF LV_LONGITUD >= 7.
-      " Si tiene más de 7 caracteres, asumimos que es Fernando
-        out->write( 'Hola Fernando' ).
+*        DATA: lv_string_c TYPE string VALUE 'ERP ####### EL perro corre por el campo'.
+*
+*        find ALL OCCURRENCES OF '#' IN lv_string_c MATCH COUNT DATA(lv_count).
+*
+*        out->write( lv_count ).
 
-        ELSEIF lv_longitud = 6 and lv_nombre EQ 'daniel'.
-             out->write( 'Hola Daniel' ).
-      " Si tiene 6 caracteres puede ser Sergio o Daniel
-            ELSEIF lv_longitud = 6 and lv_nombre = 'Sergio'.
-                 out->write( 'Hola Sergio' ).
-                ELSEIF lv_longitud <> 6 and lv_nombre = 'Pedro'.
-                    out->write(  to_upper(  'Hola Pedro' ) ).
-                    ELSE. " lv_nombre <> 6 and lv_nombre = 'ramon'.
-                        out->write(  to_upper(  'Hola Ramón' ) ).
+**********************************************************************
+"  ESCAPE
 
-        ENDIF.
+*        "url
+*        DATA(lv_url) = escape( val = 'El perro correo por el campo.'  format = cl_abap_format=>e_url_full ).
+*        out->write( lv_url ).
+*
+*        "json
+*         DATA(lv_json) = escape( val = 'El perro correo por el campo.'  format = cl_abap_format=>e_json_string_nu ).
+*        out->write( lv_json ).
 
+**********************************************************************
 
+DATA: lv_string TYPE string VALUE '1234',
+      lv_int TYPE i.
 
-
-
+      lv_int = lv_string.
+      out->write(  lv_int ).
 
 
   ENDMETHOD.
