@@ -1,4 +1,4 @@
-CLASS zcl_casetext_rmr DEFINITION
+CLASS zcl_caseiftext_rmr DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_casetext_rmr IMPLEMENTATION.
+CLASS zcl_caseiftext_rmr IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

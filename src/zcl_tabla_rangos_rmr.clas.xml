@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_CASETEXT_RMR</CLSNAME>
+    <CLSNAME>ZCL_TABLA_RANGOS_RMR</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>ejemplos case con texto</DESCRIPT>
+    <DESCRIPT>tabla rangos</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
