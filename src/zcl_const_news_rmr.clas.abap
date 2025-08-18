@@ -18,7 +18,16 @@ ENDCLASS.
 
 
 
-CLASS zcl_const_news_rmr IMPLEMENTATION.
+CLASS ZCL_CONST_NEWS_RMR IMPLEMENTATION.
+
+
+  METHOD constructor.
+
+    lv_age = iv_age.
+    lv_name = iv_name.
+
+
+  ENDMETHOD.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -116,12 +125,4 @@ CLASS zcl_const_news_rmr IMPLEMENTATION.
 
 
   ENDMETHOD.
-  METHOD constructor.
-
-    lv_age = iv_age.
-    lv_name = iv_name.
-
-
-  ENDMETHOD.
-
 ENDCLASS.

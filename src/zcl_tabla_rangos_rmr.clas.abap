@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_tabla_rangos_rmr IMPLEMENTATION.
+CLASS ZCL_TABLA_RANGOS_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

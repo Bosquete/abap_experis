@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejerciciocadcarac_rmr IMPLEMENTATION.
+CLASS ZCL_EJERCICIOCADCARAC_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

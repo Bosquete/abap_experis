@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_caseiftext_rmr IMPLEMENTATION.
+CLASS ZCL_CASEIFTEXT_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

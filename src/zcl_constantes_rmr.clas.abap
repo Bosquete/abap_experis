@@ -13,7 +13,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_constantes_rmr IMPLEMENTATION.
+CLASS ZCL_CONSTANTES_RMR IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 
@@ -55,5 +56,4 @@ METHOD if_oo_adt_classrun~main.
 
 
 endmethod.
-
 ENDCLASS.

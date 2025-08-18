@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejer_bibliolib_rmr IMPLEMENTATION.
+CLASS ZCL_EJER_BIBLIOLIB_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

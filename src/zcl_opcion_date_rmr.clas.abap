@@ -11,9 +11,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_opcion_date_rmr IMPLEMENTATION.
-
-
+CLASS ZCL_OPCION_DATE_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -57,5 +55,4 @@ out->write(  | | ).
 
 
   ENDMETHOD.
-
 ENDCLASS.

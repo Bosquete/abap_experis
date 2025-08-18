@@ -14,7 +14,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_constructores_punteros_rmr IMPLEMENTATION.
+CLASS ZCL_CONSTRUCTORES_PUNTEROS_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -272,6 +272,4 @@ CLASS zcl_constructores_punteros_rmr IMPLEMENTATION.
 
 
   ENDMETHOD.
-
-
 ENDCLASS.

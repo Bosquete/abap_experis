@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_selectvarios_rmr IMPLEMENTATION.
+CLASS ZCL_SELECTVARIOS_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

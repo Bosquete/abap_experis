@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejerc_totalvoc_rmr IMPLEMENTATION.
+CLASS ZCL_EJERC_TOTALVOC_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

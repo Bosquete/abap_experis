@@ -15,7 +15,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_simbolo_texto_rmr IMPLEMENTATION.
+CLASS ZCL_SIMBOLO_TEXTO_RMR IMPLEMENTATION.
+
+
 METHOD if_oo_adt_classrun~main.
 
 out->write(  TEXT-001 ).

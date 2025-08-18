@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_calculadoracase_rmr IMPLEMENTATION.
+CLASS ZCL_CALCULADORACASE_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

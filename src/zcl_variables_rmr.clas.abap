@@ -14,7 +14,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_variables_rmr IMPLEMENTATION.
+CLASS ZCL_VARIABLES_RMR IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 
@@ -63,5 +64,4 @@ out->write( | Mi nombre es { lv_string } y tengo { lv_int } años.| ).
 out->write(  TEXT-002 ).
 
 ENDMETHOD.
-
 ENDCLASS.

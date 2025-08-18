@@ -15,14 +15,12 @@ ENDCLASS.
 
 
 
-CLASS zcl_clase_rmr IMPLEMENTATION.
+CLASS ZCL_CLASE_RMR IMPLEMENTATION.
+
 
 METHOD if_oo_adt_classrun~main.
 
 out->write( 'Hola Mundo' ).
 
 ENDMETHOD.
-
-
-
 ENDCLASS.

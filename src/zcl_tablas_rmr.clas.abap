@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_tablas_rmr IMPLEMENTATION.
+CLASS ZCL_TABLAS_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -129,8 +129,8 @@ CLASS zcl_tablas_rmr IMPLEMENTATION.
 
         out->write( |Aerolinea: { lv_carrier } - Vuelos en este grupo: { lines( lt_members ) }  | ).
 
-        clear lt_members.
-        out->write( |Aerolinea: { lv_carrier } - Vuelos en este grupo: { lines( lt_members ) }  | ).
+        "clear lt_members.
+        "out->write( |Aerolinea: { lv_carrier } - Vuelos en este grupo: { lines( lt_members ) }  | ).
 
     ENDLOOP.
 

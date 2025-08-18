@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_tablasinsert_rmr IMPLEMENTATION.
+CLASS ZCL_TABLASINSERT_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -88,22 +88,32 @@ CLASS zcl_tablasinsert_rmr IMPLEMENTATION.
 
 **********************************************************************"   VARIACIONES DEL APPEND"
 
+"   declaración lineal de APPEND:
+  TYPES: BEGIN OF ty_persona,
+         nombre TYPE string,
+         edad TYPE i,
+         END OF ty_persona.
 
-*
-*            APPEND VALUE #(
-*
-*                    nombre = 'Daniel'
-*                    edad = 15
-*
-*             ) to lt_personas.
+   TYPES: ty_tabla_personas TYPE TABLE OF ty_persona WITH EMPTY KEY.
+   DATA: lt_personas TYPE ty_tabla_personas.
+
+   out->write( lt_personas ).
+
+            APPEND VALUE #(
+
+                    nombre = 'Daniel'
+                    edad = 15
+
+             ) to lt_personas.
+
+             out->write( lt_personas ).
 
 **********************************************************************
     "  COPIAR CONTENIDO DE UNA TABLA A OTRA
 
 "DATA lt_personas2 like lt_personas.
 
-    "APPEND LINES OF lt_personas INTO table lt_personas2.
-    "APPEND LINES OF lt_personas TO 1 TABLE lt_personas2.
+
 
 *    APPEND LINES OF lt_personas TO lt_personas2.
 *

@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_intructionlet_rmr IMPLEMENTATION.
+CLASS ZCL_INTRUCTIONLET_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

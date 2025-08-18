@@ -12,10 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_caseendcase_rmr IMPLEMENTATION.
-
-
-
+CLASS ZCL_CASEENDCASE_RMR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

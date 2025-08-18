@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_conversion_rmr IMPLEMENTATION.
+CLASS ZCL_CONVERSION_RMR IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
 
@@ -42,5 +44,4 @@ CLASS zcl_conversion_rmr IMPLEMENTATION.
 
 
   ENDMETHOD.
-
 ENDCLASS.
