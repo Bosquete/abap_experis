@@ -1,0 +1,4 @@
+@EndUserText.label: 'EXPONER CDS'
+define service ZRM_SD_ART {
+  expose ZRM_CDS_ART;
+}
